@@ -23,6 +23,10 @@ namespace AppMunicipio.Mobile.ViewModels
         private async Task SalirCommandAsync()
         {
             SecureStorage.Default.Remove(SettingsConst.Tokens);
+            SecureStorage.Default.Remove(SettingsConst.Logi);
+
+
+            var sere = await SecureStorage.Default.GetAsync(SettingsConst.Tokens);
 
             await Shell.Current.GoToAsync($"//{nameof(LoginView)}");
         }

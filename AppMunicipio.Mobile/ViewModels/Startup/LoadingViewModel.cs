@@ -18,14 +18,9 @@ namespace AppMunicipio.Mobile.ViewModels.Startup
         }
         private async void CheckUserLoginDetails()
         {
-            var sere = await SecureStorage.Default.GetAsync(SettingsConst.Tokens);
-            var handler = new JwtSecurityTokenHandler();
-            var tokenS = handler.ReadToken(sere) as JwtSecurityToken;
+            var sesi = await SecureStorage.Default.GetAsync(SettingsConst.Logi);
 
-            var firstNameClaim = tokenS.Claims.FirstOrDefault(claim => claim.Type == "FirstName");
-            var userName = $"{firstNameClaim.Value}";
-
-            if (string.IsNullOrEmpty(userName))
+            if (string.IsNullOrEmpty(sesi))
             {
                 await Shell.Current.GoToAsync($"//{nameof(LoginView)}");
             }
@@ -33,6 +28,22 @@ namespace AppMunicipio.Mobile.ViewModels.Startup
             {
                 await Shell.Current.GoToAsync($"//{nameof(InicioView)}");
             }
+
+            //var sere = await SecureStorage.Default.GetAsync(SettingsConst.Tokens);
+            //var handler = new JwtSecurityTokenHandler();
+            //var tokenS = handler.ReadToken(sere) as JwtSecurityToken;
+
+            //var firstNameClaim = tokenS.Claims.FirstOrDefault(claim => claim.Type == "FirstName");
+            //var userName = $"{firstNameClaim.Value}";
+
+            //if (string.IsNullOrEmpty(userName))
+            //{
+            //    await Shell.Current.GoToAsync($"//{nameof(LoginView)}");
+            //}
+            //else
+            //{
+            //    await Shell.Current.GoToAsync($"//{nameof(InicioView)}");
+            //}
         }
     }
 }
