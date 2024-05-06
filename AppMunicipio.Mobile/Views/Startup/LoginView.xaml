@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMunicipio.Mobile.Views.Startup.LoginView"
+             Shell.NavBarIsVisible="False"
+             xmlns:handlers="clr-namespace:AppMunicipio.Mobile.Handlers"
+             xmlns:Models="clr-namespace:AppMunicipio.Mobile.ViewModels.Startup"
+             Title="LoginView">
+    <VerticalStackLayout
+        Spacing="25"
+        Padding="30,0" 
+        VerticalOptions="Center">
+
+        <Image Source="logojo.png" HeightRequest="150" WidthRequest="150" />
+
+        <VerticalStackLayout Spacing="5">
+            <Label Text="Bienvenido!" FontSize="28" TextColor="Gray" HorizontalTextAlignment="Center" />
+            <Label Text="Iniciar Sesion" FontSize="18" TextColor="Gray" HorizontalTextAlignment="Center" />
+        </VerticalStackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Frame ZIndex="1" HasShadow="True" BorderColor="White" HeightRequest="56" WidthRequest="56" CornerRadius="28">
+                <Image Source="user.png" HeightRequest="20" WidthRequest="20" />
+            </Frame>
+            <Frame HeightRequest="45" Margin="-20,0,0,0" Padding="0" HasShadow="True" BorderColor="White"  HorizontalOptions="FillAndExpand">
+                <handlers:BorderlessEntry Text="{Binding Email}" Margin="20,0,0,0" VerticalOptions="Center" Placeholder="User Name" Keyboard="Email" />
+            </Frame>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Frame ZIndex="1" HasShadow="True" BorderColor="White" HeightRequest="56" WidthRequest="56" CornerRadius="28">
+                <Image Source="lock.png" HeightRequest="20" WidthRequest="20" />
+            </Frame>
+            <Frame HeightRequest="45" Margin="-20,0,0,0" Padding="0" HasShadow="True" BorderColor="White"  HorizontalOptions="FillAndExpand">
+                <handlers:BorderlessEntry Text="{Binding Password}" Margin="20,0,0,0" VerticalOptions="Center" Placeholder="Password" IsPassword="True" />
+            </Frame>
+        </StackLayout>
+
+        <ActivityIndicator 
+                HeightRequest="30" 
+                IsRunning="{Binding IsRunning}"
+                IsVisible="{Binding IsRunning}"/>
+
+        <Button Text="Iniciar" WidthRequest="100" CornerRadius="20" HorizontalOptions="Center" Command="{Binding LoginCommand}" />
+
+        <StackLayout Orientation="Horizontal" Spacing="5" HorizontalOptions="Center">
+            <Label Text="No tengo cuenta?" TextColor="Gray" />
+            <Label Text="Olvide Clave" TextColor="#50b3f2" />
+        </StackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>

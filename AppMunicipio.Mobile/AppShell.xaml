@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="AppMunicipio.Mobile.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:AppMunicipio.Mobile"
+    xmlns:startPa="clr-namespace:AppMunicipio.Mobile.Views.Startup"
+    xmlns:dashboardPages="clr-namespace:AppMunicipio.Mobile.Views.Dashboard"
+    xmlns:moder="clr-namespace:AppMunicipio.Mobile.Modei"
+    Shell.TabBarIsVisible="False">
+
+    <ShellContent
+        FlyoutItemIsVisible="False" Shell.FlyoutBehavior="Disabled"
+        ContentTemplate="{DataTemplate startPa:LoadingView}"
+        Route="LoadingView" />
+
+    <ShellContent
+        Title="Login Page" FlyoutItemIsVisible="False" Shell.FlyoutBehavior="Disabled"
+        ContentTemplate="{DataTemplate startPa:LoginView}"
+        Route="LoginView" />
+
+    <FlyoutItem Route="InicioView" FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent
+        Title="Inicio" Icon="{x:Static moder:Icons.Dashboard}"
+        ContentTemplate="{DataTemplate dashboardPages:InicioView}"/>
+
+        <ShellContent
+        Title="Buscar" Icon="{x:Static moder:Icons.AboutUs}"
+        ContentTemplate="{DataTemplate dashboardPages:InicioView}"/>
+
+        <ShellContent
+        Title="Otros" Icon="{x:Static moder:Icons.People}"
+        ContentTemplate="{DataTemplate dashboardPages:InicioView}"/>
+    </FlyoutItem>
+
+    <Shell.FlyoutFooter>
+        <StackLayout Padding="20">
+            <Button Text="Salir" Command="{Binding SalirCommand}" />
+        </StackLayout>
+    </Shell.FlyoutFooter>
+
+</Shell>
