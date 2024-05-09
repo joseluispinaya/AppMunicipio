@@ -49,6 +49,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="google-services.json" />
 	  <None Remove="Resources\Images\about_us.png" />
 	  <None Remove="Resources\Images\contact_us.png" />
 	  <None Remove="Resources\Images\dashboard.png" />
@@ -61,6 +62,10 @@
 	  <None Remove="Resources\Images\noimage.jpg" />
 	  <None Remove="Resources\Images\team.png" />
 	  <None Remove="Resources\Images\user.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="google-services.json" />
 	</ItemGroup>
 
 	<ItemGroup>
