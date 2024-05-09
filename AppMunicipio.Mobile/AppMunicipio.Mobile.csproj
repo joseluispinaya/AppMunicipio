@@ -55,8 +55,10 @@
 	  <None Remove="Resources\Images\ic_more_vert.png" />
 	  <None Remove="Resources\Images\ic_search.png" />
 	  <None Remove="Resources\Images\lock.png" />
+	  <None Remove="Resources\Images\logoemi.png" />
 	  <None Remove="Resources\Images\logojo.png" />
 	  <None Remove="Resources\Images\more_icon.png" />
+	  <None Remove="Resources\Images\noimage.jpg" />
 	  <None Remove="Resources\Images\team.png" />
 	  <None Remove="Resources\Images\user.png" />
 	</ItemGroup>
@@ -72,7 +74,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Views\Dashboard\ContratoDetalleView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Dashboard\InicioView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Dashboard\PersonalListView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Dashboard\PersonalView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Startup\LoadingView.xaml">

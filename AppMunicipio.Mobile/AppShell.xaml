@@ -26,11 +26,11 @@
 
         <ShellContent
         Title="Buscar" Icon="{x:Static moder:Icons.AboutUs}"
-        ContentTemplate="{DataTemplate dashboardPages:InicioView}"/>
+        ContentTemplate="{DataTemplate dashboardPages:PersonalView}"/>
 
         <ShellContent
-        Title="Otros" Icon="{x:Static moder:Icons.People}"
-        ContentTemplate="{DataTemplate dashboardPages:InicioView}"/>
+        Title="Personal" Icon="{x:Static moder:Icons.People}"
+        ContentTemplate="{DataTemplate dashboardPages:PersonalListView}"/>
     </FlyoutItem>
 
     <Shell.FlyoutFooter>

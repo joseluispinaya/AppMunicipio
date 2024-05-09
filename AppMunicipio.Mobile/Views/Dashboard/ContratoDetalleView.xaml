@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMunicipio.Mobile.Views.Dashboard.ContratoDetalleView"
+             xmlns:Models="clr-namespace:AppMunicipio.Mobile.ViewModels.Dashboard"
+             Title="ContratoDetalleView">
+    <VerticalStackLayout Spacing="5">
+        <Label Text="Detalle de Contrato" FontAttributes="Bold" FontSize="18" HorizontalOptions="Center" Margin="0,20,0,10"></Label>
+        <Label 
+            Text="{Binding Dias}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Grid Margin="10,0,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" 
+                   Grid.Row="0"
+                   Margin="5,0,5,0"
+                   FontAttributes="Bold" 
+                   Text="Salario"/>
+            <Label Grid.Column="1" 
+                   Grid.Row="0"
+                   Text="{Binding Contra.FormatoSueldo}"/>
+            <Label Grid.Column="0" 
+                   Grid.Row="1"
+                   Margin="5,0,5,0"
+                   FontAttributes="Bold" 
+                   Text="Cargo"/>
+            <Label Grid.Column="1" 
+                   Grid.Row="1"
+                   Text="{Binding Contra.Cargoc}"/>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

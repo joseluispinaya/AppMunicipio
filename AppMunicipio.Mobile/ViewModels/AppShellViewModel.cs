@@ -24,9 +24,7 @@ namespace AppMunicipio.Mobile.ViewModels
         {
             SecureStorage.Default.Remove(SettingsConst.Tokens);
             SecureStorage.Default.Remove(SettingsConst.Logi);
-
-
-            var sere = await SecureStorage.Default.GetAsync(SettingsConst.Tokens);
+            //var sere = await SecureStorage.Default.GetAsync(SettingsConst.Tokens);
 
             await Shell.Current.GoToAsync($"//{nameof(LoginView)}");
         }

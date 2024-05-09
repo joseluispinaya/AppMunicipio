@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -52,6 +53,22 @@ namespace AppMunicipio.Mobile.Repositories
                 return new HttpResponseWrapper<TResponse>(response, false, responseHttp);
             }
             return new HttpResponseWrapper<TResponse>(default, !responseHttp.IsSuccessStatusCode, responseHttp);
+        }
+
+        public async Task<HttpResponseWrapper<T>> Get<T>(string urlBase, string url, string tokenType, string accessToken)
+        {
+            HttpClient client = new HttpClient
+            {
+                BaseAddress = new Uri(urlBase),
+            };
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(tokenType, accessToken);
+            var responseHttp = await client.GetAsync(url);
+            if (responseHttp.IsSuccessStatusCode)
+            {
+                var response = await UnserializeAnswer<T>(responseHttp, _jsonDefaultOptions);
+                return new HttpResponseWrapper<T>(response, false, responseHttp);
+            }
+            return new HttpResponseWrapper<T>(default, true, responseHttp);
         }
     }
 }

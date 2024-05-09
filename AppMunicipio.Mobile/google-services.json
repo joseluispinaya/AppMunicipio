@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "55876655977",
+    "project_id": "fir-baaca",
+    "storage_bucket": "fir-baaca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:55876655977:android:ce140530b111e78b79bbf8",
+        "android_client_info": {
+          "package_name": "com.municipio.demo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIEm_OJaQjDZTCyUWe-sE2kFyNNkASemo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,4 +1,5 @@
 ﻿using AppMunicipio.Mobile.Repositories;
+using AppMunicipio.Mobile.ViewModels.Dashboard;
 using AppMunicipio.Mobile.ViewModels.Startup;
 using AppMunicipio.Mobile.Views.Dashboard;
 using AppMunicipio.Mobile.Views.Startup;
@@ -25,10 +26,16 @@ namespace AppMunicipio.Mobile
             builder.Services.AddTransient<LoginView>();
             builder.Services.AddTransient<InicioView>();
             builder.Services.AddTransient<LoadingView>();
+            builder.Services.AddTransient<PersonalView>();
+            builder.Services.AddTransient<ContratoDetalleView>();
+            builder.Services.AddTransient<PersonalListView>();
 
             //View Models
             builder.Services.AddTransient<LoginViewModel>();
             builder.Services.AddTransient<LoadingViewModel>();
+            builder.Services.AddTransient<PersonalViewModel>();
+            builder.Services.AddTransient<ContratoDetalleViewModel>();
+            builder.Services.AddTransient<PersonalListViewModel>();
 
 #if DEBUG
             builder.Logging.AddDebug();
